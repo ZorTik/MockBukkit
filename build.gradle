@@ -35,3 +35,19 @@ dependencies {
 
 eclipse.classpath.downloadJavadoc = true
 eclipse.classpath.downloadSources = true
+
+publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                groupId = 'com.github.ZorTik'
+                artifactId = project.name
+                version = '1.0'
+
+                from components.java
+                pom {
+                    name = 'MockBukkit'
+                    description = ''
+                }
+            }
+        }
+    }
